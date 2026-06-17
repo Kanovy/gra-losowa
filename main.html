@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RNG</title>
+</head>
+<body>
+<header>
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button id="back-to-menu-btn">← MENU</button>
+            <a href="#" class="brand-logo" id="logo-home">RNG</a>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <div class="nav-right">
+            <div class="wallet-container">
+                <div class="wallet-info">
+                    <span class="label">PORTFEL</span>
+                    <span class="amount" id="wallet-amount">0 <span class="currency">$</span></span>
+                </div>
+                <button class="add-funds-btn" title="Doładuj konto">+</button>
+            </div>
+
+            <div class="profile-picture">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/029/271/062/small/avatar-profile-icon-in-flat-style-male-user-profile-illustration-on-isolated-background-man-profile-sign-business-concept-vector.jpg" alt="Avatar">
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div id="games-view">
+        <div class="game-card" id="open-mines">Mines</div>
+        <div class="game-card disabled">
+            Chicken
+            <div class="status-x">X</div>
+        </div>
+        <div class="game-card disabled">
+            Crash
+            <div class="status-x">X</div>
+        </div>
+    </div>
+
+    <div id="mines-view" class="hidden">
+        <div class="stats-sidebar">
+            <h3>STATYSTYKI</h3>
+            <table class="stats-table">
+                <tr class="row-wins"><td>Wins</td><td id="stat-wins">0</td></tr>
+                <tr class="row-losses"><td>Losses</td><td id="stat-losses">0</td></tr>
+                <tr class="row-maxwin"><td>Max Win</td><td id="stat-max-win">0 $</td></tr>
+                <tr class="row-maxloss"><td>Max Loss</td><td id="stat-max-loss">0 $</td></tr>
+                <tr class="row-streak"><td>Max Streak</td><td id="stat-streak">0</td></tr>
+            </table>
+        </div>
+
+        <div class="game-area">
+            <div class="controls-panel">
+                <div class="input-group">
+                    <label>Bet Amount ($)</label>
+                    <input type="number" id="bet-amount" value="10" min="1" step="1">
+                </div>
+                <div class="input-group">
+                    <label>Mines (1-24)</label>
+                    <input type="number" id="mines-count" value="3" min="1" max="24" step="1">
+                </div>
+
+                <button id="start-btn">Start Game</button>
+                <button id="cashout-btn" disabled>Cashout (<span id="current-multiplier">1.00</span>x)</button>
+
+                <div id="game-status-text"></div>
+            </div>
+
+            <div class="mines-grid disabled-grid" id="board"></div>
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

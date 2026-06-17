@@ -1,0 +1,315 @@
+*, *:before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    user-select: none;
+    background-color: #0b0c0e;
+    color: #f5f6f8;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.top-nav {
+    background-color: #13151a;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: 1px solid #262a34;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#back-to-menu-btn {
+    background-color: #262a34;
+    color: #fff;
+    border: 1px solid #3d4454;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#back-to-menu-btn:hover {
+    background-color: #323846;
+}
+
+.brand-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+#reset-btn {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#reset-btn:hover { background-color: #cc0000; }
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wallet-container {
+    background: #181b22;
+    border: 1px solid #262a34;
+    display: flex;
+    align-items: center;
+    padding: 6px 6px 6px 12px;
+    border-radius: 8px;
+    gap: 12px;
+}
+
+.wallet-info { display: flex; flex-direction: column; }
+.wallet-info .label { font-size: 9px; font-weight: bold; color: #7e8494; }
+.wallet-info .amount { font-size: 14px; font-weight: bold; }
+.wallet-info .currency { color: #00ff88; }
+
+.add-funds-btn {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    color: #00ff88;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding-bottom: 2px;
+}
+
+.add-funds-btn:hover { background: #00ff88; color: #000; }
+
+.profile-picture img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: block;
+    background: #262a34;
+}
+
+#games-view {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden { display: none !important; }
+
+.game-card {
+    background-color: #1a1d24;
+    border: 1px solid #262a34;
+    border-radius: 12px;
+    padding: 50px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card:not(.disabled):hover {
+    background-color: #222630;
+    border-color: #7e8494;
+}
+
+.game-card.disabled { opacity: 0.3; cursor: not-allowed; pointer-events: none; }
+
+.status-x {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff3333;
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+#mines-view {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-sidebar {
+    flex: 1;
+    background-color: #13151a;
+    border: 1px solid #262a34;
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.stats-sidebar h3 {
+    font-size: 14px;
+    color: #7e8494;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table td {
+    padding: 12px 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #1a1d24;
+}
+
+.stats-table td:last-child {
+    text-align: right;
+}
+
+.row-wins td:last-child { color: #00ff88; }
+.row-losses td:last-child { color: #ff3333; }
+.row-maxwin td:last-child { color: #00e1ff; }
+.row-maxloss td:last-child { color: #ff9900; }
+.row-streak td:last-child { color: #cc66ff; }
+
+.game-area {
+    flex: 3;
+    display: flex;
+    background-color: #13151a;
+    border: 1px solid #262a34;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 30px;
+}
+
+.controls-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 11px;
+    color: #7e8494;
+    font-weight: bold;
+}
+
+.input-group input {
+    background-color: #1a1d24;
+    border: 1px solid #262a34;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#start-btn, #cashout-btn {
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#start-btn { background-color: #00ff88; color: #000; }
+#start-btn:hover { background-color: #00cc6e; }
+
+#cashout-btn { background-color: #262a34; color: #7e8494; }
+#cashout-btn:not(:disabled) { background-color: #ffaa00; color: #000; }
+
+#game-status-text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.mines-grid {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1 / 1;
+}
+
+.mines-grid.disabled-grid {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.tile {
+    background-color: #262a34;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    transition: background 0.1s;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.tile:hover { background-color: #2e3442; }
+
+.tile.gem { background-color: #00ff88; color: #000; pointer-events: none; }
+.tile.mine { background-color: #ff3333; color: #fff; pointer-events: none; }
+.tile.revealed-mine { background-color: #551a1a; color: #ff3333; opacity: 0.5; pointer-events: none; }
+
+@media (max-width: 768px) {
+    #games-view { grid-template-columns: 1fr; }
+    #mines-view { flex-direction: column; }
+    .game-area { flex-direction: column; }
+    .mines-grid { width: 100%; height: auto; aspect-ratio: 1/1; }
+}
